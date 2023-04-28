@@ -1,7 +1,7 @@
 import { Text, View } from 'react-native';
 
 const HomeScreen = () => {
-    reutrn(
+    return (
         <View>
             <Text>Home Screen</Text>
         </View>
