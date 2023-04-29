@@ -9,7 +9,7 @@ export const CAMPSITES = [
     },
     {
         id: 1,
-        name:"Chrome River Campground ",
+        name: "Chrome River Campground ",
         image: require("../assets/images/chrome-river.jpg"),
         elevation: 877,
         featured: false,
@@ -17,7 +17,7 @@ export const CAMPSITES = [
     },
     {
         id: 2,
-        name:"Breadcrumb Trail Campground",
+        name: "Breadcrumb Trail Campground",
         image: require("../assets/images/breadcrumb-trail.jpg"),
         elevation: 2901,
         featured: false,
@@ -25,7 +25,7 @@ export const CAMPSITES = [
     },
     {
         id: 3,
-        name:"Redux Woods Campground",
+        name: "Redux Woods Campground",
         image: require("../assets/images/redux-woods.jpg"),
         elevation: 42,
         featured: true,
