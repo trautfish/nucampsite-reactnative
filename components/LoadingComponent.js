@@ -1,15 +1,14 @@
 import { ActivityIndicator, StyleSheet, Text, View } from 'react-native';
 
-const Loading = () => {
+function Loading() {
     return (
         <View style={styles.loadingView}>
             <ActivityIndicator size='large' color='#5637DD' />
-            <Text style={styles.loadingText}>
-
-            </Text>
+            <Text style={styles.loadingText}>Loading . . .</Text>
         </View>
-    )
-};
+    );
+}
+
 const styles = StyleSheet.create({
     loadingView: {
         alignItems: 'center',
