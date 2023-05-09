@@ -4,7 +4,8 @@ import {
     FlatList,
     Text,
     TouchableOpacity,
-    StyleSheet
+    StyleSheet,
+    Alert
 } from 'react-native';
 import { Avatar, ListItem } from 'react-native-elements';
 import Loading from '../components/LoadingComponent';
@@ -25,9 +26,34 @@ const FavoritesScreen = ({ navigation }) => {
                 <View style={styles.deleteView}>
                     <TouchableOpacity
                         style={styles.deleteTouchable}
-                        onPress={() => dispatch(toggleFavorite(campsite.id))}
+                        onPress={() =>
+                            Alert.alert(
+                                'Delete Favorite?',
+                                'Are you sure you wish to delete the favorite campsite ' +
+                                campsite.name +
+                                '?',
+                                [
+                                    {
+                                        text: 'Cancel',
+                                        onPress: () =>
+                                            console.log(
+                                                campsite.name + 'Not Deleted'
+                                            ),
+                                        style: 'cancel'
+                                    },
+                                    {
+                                        text: 'OK',
+                                        onPress: () =>
+                                            dispatch(
+                                                toggleFavorite(campsite.id)
+                                            )
+                                    }
+                                ],
+                                { cancelable: false }
+                            )
+                        }
                     >
-                        <Text style={StyleSheet.deleteText}>Delete</Text>
+                        <Text style={styles.deleteText}>Delete</Text>
                     </TouchableOpacity>
                 </View>
                 <View>
@@ -39,7 +65,10 @@ const FavoritesScreen = ({ navigation }) => {
                             })
                         }
                     >
-                        <Avatar rounded source={{ uri: baseUrl + campsite.image }} />
+                        <Avatar
+                            rounded
+                            source={{ uri: baseUrl + campsite.image }}
+                        />
                         <ListItem.Content>
                             <ListItem.Title>{campsite.name}</ListItem.Title>
                             <ListItem.Subtitle>
