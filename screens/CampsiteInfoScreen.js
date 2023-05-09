@@ -9,7 +9,7 @@ import { toggleFavorite } from '../features/favorites/favoritesSlice';
 const CampsiteInfoScreen = ({ route }) => {
     const { campsite } = route.params;
     const comments = useSelector((state) => state.comments);
-    const favorites = useSelector((state) => state.comments);
+    const favorites = useSelector((state) => state.favorites);
     const dispatch = useDispatch();
 
     const [showModal, setShowModal] = useState(false);
